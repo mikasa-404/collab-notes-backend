@@ -1,0 +1,57 @@
+{
+  "name": "collab-notes-backend",
+  "version": "1.0.0",
+  "description": "A collaborative notes backend API built with Node.js, Express, and Prisma",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "build": "tsc",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "prisma db seed",
+    "db:studio": "prisma studio",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikasa-404/collab-notes-backend.git"
+  },
+  "keywords": [
+    "collaborative",
+    "notes",
+    "api",
+    "nodejs",
+    "express",
+    "prisma",
+    "backend"
+  ],
+  "author": "mikasa-404",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mikasa-404/collab-notes-backend/issues"
+  },
+  "homepage": "https://github.com/mikasa-404/collab-notes-backend#readme",
+  "dependencies": {
+    "@prisma/client": "^6.14.0",
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.15",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.14.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  }
+}
