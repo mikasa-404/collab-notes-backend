@@ -4,6 +4,9 @@ const cookieParser = require('cookie-parser');
 const { PrismaClient } = require('@prisma/client');
 const config = require('./config/config');
 
+// Import routes
+const apiRoutes = require('./routes');
+
 // Initialize Express app
 const app = express();
 const PORT = config.port;
@@ -26,6 +29,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Security middleware
+//you can use helmet for security headers
 app.use((req, res, next) => {
   // Remove X-Powered-By header
   res.removeHeader('X-Powered-By');
@@ -48,10 +52,8 @@ app.get('/health', (req, res) => {
   });
 });
 
-// API routes (to be implemented)
-app.use('/api', (req, res) => {
-  res.json({ message: 'API endpoints coming soon' });
-});
+// API routes
+app.use('/api', apiRoutes);
 
 // 404 handler
 app.use((req, res) => {
